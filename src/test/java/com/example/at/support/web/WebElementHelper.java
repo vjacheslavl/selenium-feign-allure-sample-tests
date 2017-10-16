@@ -1,14 +1,9 @@
 package com.example.at.support.web;
 
-import com.google.common.util.concurrent.Uninterruptibles;
 import com.example.at.config.webdriver.DriverBase;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.google.common.util.concurrent.Uninterruptibles;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -130,5 +125,9 @@ public class WebElementHelper {
     public static void waitForLoadingIndicatorToDisappear() {
         //toDo - implement logic
     }
-}
 
+    public static void hoverOverWebelement(WebElement element) {
+        Actions action = new Actions(DriverBase.getDriver());
+        action.moveToElement(element).build().perform();
+    }
+}

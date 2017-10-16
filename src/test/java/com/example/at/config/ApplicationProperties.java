@@ -21,11 +21,11 @@ public class ApplicationProperties {
                     setProperty(ApplicationProperty.WAIT_TIMEOUT.name, "10");
                     setProperty(ApplicationProperty.WAIT_TIMEOUT_LNG.name, "30");
 
-                    setProperty(ApplicationProperty.TARGET_BROWSER.name, "FIREFOX"); //PHANTOMJS, OPERA, SAFARI, EDGE, IE, CHROME, FIREFOX
+                    setProperty(ApplicationProperty.TARGET_BROWSER.name, "CHROME"); //PHANTOMJS, OPERA, SAFARI, EDGE, IE, CHROME, FIREFOX
 
                     //application URL's
-                    setProperty(ApplicationProperty.APP_URL.name, "http://google.com");
-                    setProperty(ApplicationProperty.SERVICE_URL.name, "http://google.com/rest");
+                    setProperty(ApplicationProperty.APP_URL.name, "http://automationpractice.com");
+                    setProperty(ApplicationProperty.SERVICE_URL.name, "https://ch7n1tyg3g.execute-api.eu-central-1.amazonaws.com");
 
                     //User settings
                     setProperty(ApplicationProperty.INTERNAL_USER.name, "some_user@ctco.com");
@@ -34,7 +34,7 @@ public class ApplicationProperties {
                     //Proxy settings
                     setProperty(ApplicationProperty.REST_PROXY_ENABLED.name, "true");
                     setProperty(ApplicationProperty.BROWSER_PROXY_ENABLED.name, "false");
-                    setProperty(ApplicationProperty.PROXY_HOST.name, "172.22.1.4");
+                    setProperty(ApplicationProperty.PROXY_HOST.name, "10.23.2.250");
                     setProperty(ApplicationProperty.PROXY_PORT.name, "8080");
 
                     //Selenium grid settings

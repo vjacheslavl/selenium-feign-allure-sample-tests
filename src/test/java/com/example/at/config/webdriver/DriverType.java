@@ -44,6 +44,7 @@ public enum DriverType implements DriverSetup {
         }
 
         public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
+            System.setProperty("webdriver.chrome.driver", getClass().getResource("/drivers/chromedriver_win32/chromedriver.exe").getPath());
             return new ChromeDriver(capabilities);
         }
     },

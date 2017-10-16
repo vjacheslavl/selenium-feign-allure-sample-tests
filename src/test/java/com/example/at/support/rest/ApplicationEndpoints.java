@@ -1,8 +1,9 @@
 package com.example.at.support.rest;
 
 
-import com.example.at.support.rest.dto.QuoteResponse;
-import com.example.at.support.rest.dto.TermsOfUseDTO;
+import com.example.at.support.rest.dto.SingleUserResponse;
+import com.example.at.support.rest.dto.UserListResponse;
+import com.example.at.support.rest.dto.UserPayload;
 import feign.Headers;
 import feign.Param;
 import feign.RequestLine;
@@ -10,22 +11,22 @@ import feign.RequestLine;
 
 public interface ApplicationEndpoints {
 
-    @RequestLine("GET /initialForm")
     @Headers({"Accepts: application/json, text/plain, */*"})
-    QuoteResponse getForm();
+    @RequestLine("GET /prod")
+    UserListResponse getAllUsers();
 
-    @RequestLine("POST /quote?ignoreWarnings={ignoreWarnings}")
+    @RequestLine("GET /prod/{id}")
+    SingleUserResponse getUseById(@Param("id") String id);
+
+
+    @RequestLine("DELETE /prod")
+    void deleteById(UserPayload dto);
+
+    @RequestLine("POST /prod")
     @Headers("Content-Type: application/json")
-    QuoteResponse create(QuoteResponse dto, @Param("ignoreWarnings") boolean ignoreWarnings);
+    void createUser(UserPayload dto);
 
-    @RequestLine("PUT /quote/{quoteId}?ignoreWarnings={ignoreWarnings}")
+    @RequestLine("PUT /prod")
     @Headers("Content-Type: application/json")
-    QuoteResponse save(@Param("quoteId") String quoteId, @Param("ignoreWarnings") boolean ignoreWarnings, QuoteResponse dto);
-
-    @RequestLine("PUT /termsofuse/QM")
-    @Headers("Content-Type: application/json")
-    void acceptTermOfUse(TermsOfUseDTO dto);
-
-    @RequestLine("GET /user/active/{currentUser}")
-    void setCurrentUser(@Param("currentUser") String currentUser);
+    void modifyUser(UserPayload dto);
 }
