@@ -32,7 +32,7 @@ public class ApplicationProperties {
                     setProperty(ApplicationProperty.EXTERNAL_USER.name, "some_external_user@ctco.com");
 
                     //Proxy settings
-                    setProperty(ApplicationProperty.REST_PROXY_ENABLED.name, "true");
+                    setProperty(ApplicationProperty.REST_PROXY_ENABLED.name, "false");
                     setProperty(ApplicationProperty.BROWSER_PROXY_ENABLED.name, "false");
                     setProperty(ApplicationProperty.PROXY_HOST.name, "10.23.2.250");
                     setProperty(ApplicationProperty.PROXY_PORT.name, "8080");
