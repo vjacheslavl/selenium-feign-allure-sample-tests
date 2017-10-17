@@ -3,13 +3,10 @@ Selenium / Feign (REST) / JUnit5 sample project
 
 ### What should I know?
 
-- To run any unit tests that test your Selenium framework you just need to ensure that all unit test file names end, or start with "test" and they will be run as part of the build.
-- The maven failsafe plugin has been used to create a profile with the id "selenium-tests".  This is active by default, but if you want to perform a build without running your selenium tests you can disable it using:
+- To run tests
 
-        mvn clean verify -P-selenium-tests
+        mvn clean verify allure:report
         
-- The maven-failsafe-plugin will pick up any files that end in IT by default.  You can customise this is you would prefer to use a custom identifier for your Selenium tests.
-
 ### Anything else?
 
 Configuration defined in ApplicationProperties.java

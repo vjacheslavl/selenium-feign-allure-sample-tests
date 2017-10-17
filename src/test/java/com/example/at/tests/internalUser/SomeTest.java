@@ -4,17 +4,18 @@ import com.example.at.pageObjects.SearchResultsPage;
 import com.example.at.pageObjects.ShopHomePage;
 import com.example.at.support.web.BrowserNavigation;
 import com.example.at.tests.BaseTest;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Feature("WEB example")
 public class SomeTest extends BaseTest {
 
-    @Tag("DEV")
-    @Tag("E2E")
-    @DisplayName("Automation practice - search screen")
+    @Story("Add to shoping cart")
+    @Issue("TST-125")
     @Test
     public void saveQuoteForInternalUser() {
         BrowserNavigation.openHomePage();

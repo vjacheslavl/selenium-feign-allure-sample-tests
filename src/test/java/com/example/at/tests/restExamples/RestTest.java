@@ -5,20 +5,21 @@ import com.example.at.support.rest.RestClient;
 import com.example.at.support.rest.dto.SingleUserResponse;
 import com.example.at.support.rest.dto.UserListResponse;
 import com.example.at.support.rest.dto.UserPayload;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.Test;
 
 import static java.util.UUID.randomUUID;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Feature("REST example")
 public class RestTest {
     private RestClient restClient = new RestClient();
     private ApplicationEndpoints applicationRestClient = restClient.createClient();
 
-    @Tag("DEV")
-    @Tag("E2E")
-    @DisplayName("Rest Test Example")
+    @Story("Create user")
+    @Issue("TST-123")
     @Test
     public void createAndModifyUsers() {
 
@@ -49,9 +50,8 @@ public class RestTest {
     }
 
 
-    @Tag("DEV")
-    @Tag("E2E")
-    @DisplayName("Rest Delete")
+    @Story("Delete user")
+    @Issue("TST-124")
     @Test
     public void deleteAllUsers() {
         UserListResponse allUsers = applicationRestClient.getAllUsers();
